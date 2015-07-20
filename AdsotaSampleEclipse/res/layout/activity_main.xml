@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appotaAds="http://schemas.android.com/apk/lib/com.appota.ads"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+       	android:scaleType="centerInside"
+        android:src="@drawable/background" />
+
+    <Button
+        android:id="@+id/openScreenAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Full Screen" />
+    
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/openScreenAds"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:text="OfferWall" />
+    <com.appota.ads.AdView
+        android:id="@+id/adview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        appotaAds:type="BANNER" />
+
+</RelativeLayout>

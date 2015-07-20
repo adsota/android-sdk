@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppotaAdsSample</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string-array name="items_arr">
+        <item>Beef</item>
+        <item>Pork</item>
+        <item>Vegetable</item>
+        <item>CocaCola</item>
+        <item>Fish</item>
+        <item>Shrimp</item>
+    </string-array>
+</resources>

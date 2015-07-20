@@ -1,0 +1,1 @@
+###  Sample for project without Google Play Services - Analytics
