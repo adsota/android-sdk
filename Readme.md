@@ -4,9 +4,9 @@
 
 [2. Set up Appota Ads SDK](#2-set-up-appota-ads-sdk)
 
-[2.1. Configure SDK](#21configure-sdk)
+[2.1. Configure SDK](#21-configure-sdk)
 
-[2.2. Load ads](#22-load-ads)
+[2.2. Load ads](#22-configure-sdk)
 
 ## [1. Import Appota Ads SDK]()
 
