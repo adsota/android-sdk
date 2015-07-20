@@ -6,13 +6,13 @@
 
 [2.1. Configure SDK](#21-configure-sdk)
 
-[2.2. Load ads](#22-configure-sdk)
+[2.2. Load ads](#22-load-ad)
 
 ## [1. Import Appota Ads SDK]()
 
 - Import Ads SDK into your project:
 
-	- In Eclipse: copy jar files (appota_ads_publishers.jar,play-services-base_7.5.0.jar & play-services-analytics_7.5.0.jar) into libs folder. If you're using play services(includes analytics), you don't have to import play-services-base_7.5.0.jar & play-services-analytics_7.5.0.jar. 
+	- In Eclipse: copy jar files ( [appota_ads_publishers.jar](https://github.com/adsota/android-sdk/blob/master/appota_ads_publishers.jar) ,[play-services-analytics_7.5.0.jar](https://github.com/adsota/android-sdk/blob/master/AdsotaSampleEclipse/libs/play-services-analytics_7.5.0.jar) & [play-services-base_7.5.0.jar](https://github.com/adsota/android-sdk/blob/master/AdsotaSampleEclipse/libs/play-services-base_7.5.0.jar) ) into libs folder. If you're using play services(includes analytics), you don't have to import play-services-base_7.5.0.jar & play-services-analytics_7.5.0.jar. 
 
 	- In Studio: 
 		- Without Google analytics library:
