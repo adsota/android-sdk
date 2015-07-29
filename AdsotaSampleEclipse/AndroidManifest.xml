@@ -42,7 +42,7 @@
         <activity
             android:name="com.example.appotaadssample.MainLandscapeActivity"
             android:screenOrientation="landscape" />
-        <activity android:name="com.example.appotaadssample.TestActivity" />
+        <activity android:name="com.example.appotaadssample.TestNativeAdsActivity" />
 
         <!-- Config for PID -->
         <activity android:name="com.appota.ads.AppotaURIHandler" >
