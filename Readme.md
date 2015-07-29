@@ -148,6 +148,7 @@
 * ADNativeObject
 
 	getID
+
 	getRating - float
 
 * ADNativeViewObject
@@ -157,16 +158,23 @@
 * ADNativeInterstitialObject
 
 	getImageUrl
+
 	getIconUrl
+
 	getDescription
+
 	getName
 
 * ADNativeOfferWallObject
 
 	getPoint
+
 	getIconUrl
+
 	getName
+
 	getAction
+
 	getDescription
 
 ### 2.3.1 Config:
