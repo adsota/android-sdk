@@ -2,27 +2,20 @@ package com.example.appotaadssample;
 
 import java.util.ArrayList;
 
-import com.appota.ads.ADNative;
-import com.appota.ads.AppotaAdsSDK;
-import com.appota.ads.entity.ADInterstitialObject;
-import com.appota.ads.entity.ADObject;
-import com.appota.ads.entity.ADOfferWallObject;
-import com.appota.ads.entity.ADViewObject;
-import com.bumptech.glide.Glide;
-
 import android.app.Activity;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.appota.ads.ADNative;
+import com.appota.ads.AppotaAdsSDK;
+import com.appota.ads.entity.ADNativeInterstitialObject;
+import com.appota.ads.entity.ADNativeObject;
+import com.appota.ads.entity.ADNativeOfferWallObject;
+import com.appota.ads.entity.ADNativeViewObject;
+import com.bumptech.glide.Glide;
 
 public class TestNativeAdsActivity extends Activity implements OnClickListener{
 	private ImageView myCustomBannerAds;
@@ -31,24 +24,24 @@ public class TestNativeAdsActivity extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		ArrayList<ADObject> ads = getIntent().getExtras().getParcelableArrayList("data");
+		ArrayList<ADNativeObject> ads = getIntent().getExtras().getParcelableArrayList("data");
 		Log.i("TestActivity", "pass array length:"+ads.size());
 		setContentView(R.layout.test_ads_native_layout);
 		
 		myCustomBannerAds = (ImageView) findViewById(R.id.myCustomBannerAds);
 		myCustomFullScreenAds = (ImageView) findViewById(R.id.myCustomFullScreenAds);
-		ADObject adObject = ads.get(0);
-		if(adObject instanceof ADViewObject){
-			String imageUrl = ((ADViewObject) adObject).getImageUrl();
+		ADNativeObject ADNativeObject = ads.get(0);
+		if(ADNativeObject instanceof ADNativeViewObject){
+			String imageUrl = ((ADNativeViewObject) ADNativeObject).getImageUrl();
 			Glide.with(this).load(imageUrl).into(myCustomBannerAds);
 			myCustomBannerAds.setOnClickListener(this);
-			myCustomBannerAds.setTag(adObject);
-		}else if(adObject instanceof ADInterstitialObject){
-			String imageUrl = ((ADInterstitialObject) adObject).getImageUrl();
+			myCustomBannerAds.setTag(ADNativeObject);
+		}else if(ADNativeObject instanceof ADNativeInterstitialObject){
+			String imageUrl = ((ADNativeInterstitialObject) ADNativeObject).getImageUrl();
 			Glide.with(this).load(imageUrl).into(myCustomFullScreenAds);
 			myCustomFullScreenAds.setOnClickListener(this);
-			myCustomFullScreenAds.setTag(adObject);
-		}else if(adObject instanceof ADOfferWallObject){
+			myCustomFullScreenAds.setTag(ADNativeObject);
+		}else if(ADNativeObject instanceof ADNativeOfferWallObject){
 			
 		}
 	}
@@ -57,10 +50,10 @@ public class TestNativeAdsActivity extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.myCustomBannerAds:
-			doProcessClickMyAds((ADObject) myCustomBannerAds.getTag());
+			doProcessClickMyAds((ADNativeObject) myCustomBannerAds.getTag());
 			break;
 		case R.id.myCustomFullScreenAds:
-			doProcessClickMyAds((ADObject) myCustomFullScreenAds.getTag());
+			doProcessClickMyAds((ADNativeObject) myCustomFullScreenAds.getTag());
 			break;
 		default:
 			break;
@@ -73,7 +66,7 @@ public class TestNativeAdsActivity extends Activity implements OnClickListener{
 		AppotaAdsSDK.active(this);
 	}
 
-	private void doProcessClickMyAds(ADObject adObject) {
-		ADNative.click(adObject);
+	private void doProcessClickMyAds(ADNativeObject ADNativeObject) {
+		ADNative.click(ADNativeObject);
 	}
 }

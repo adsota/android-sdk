@@ -14,11 +14,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.appota.ads.ADNative;
-import com.appota.ads.ADNative.ADRequestCallback;
+import com.appota.ads.ADNative.ADNativeRequestCallback;
 import com.appota.ads.ADNative.ADType;
 import com.appota.ads.ADNativeRequest;
 import com.appota.ads.AppotaAdsSDK;
-import com.appota.ads.entity.ADObject;
+import com.appota.ads.entity.ADNativeObject;
 
 public class ConfigActivity extends Activity implements OnClickListener{
 
@@ -81,14 +81,14 @@ public class ConfigActivity extends Activity implements OnClickListener{
 		ADNativeRequest adNativeRequest =  new ADNativeRequest();
 		adNativeRequest.adType = ADType.ADTypeBanner;
 		adNativeRequest.adUnitID = 46;
-		adNativeRequest.setRequestCallback(new ADRequestCallback() {
+		adNativeRequest.setRequestCallback(new ADNativeRequestCallback() {
 			
 			@Override
-			public void onLoadAdsComplete(ArrayList<ADObject> listAds) {
+			public void onLoadAdsComplete(ArrayList<ADNativeObject> listAds) {
 				Log.e("onLoadAdsNativeComplete", "onLoadAdsNativeComplete :"+listAds.size());
 				if(listAds != null && listAds.size()>0){
 					Intent startAds = new Intent(ConfigActivity.this,TestNativeAdsActivity.class);
-					startAds.putParcelableArrayListExtra("data", (ArrayList<ADObject>)listAds);
+					startAds.putParcelableArrayListExtra("data", (ArrayList<ADNativeObject>)listAds);
 					startActivity(startAds);
 				}
 			}

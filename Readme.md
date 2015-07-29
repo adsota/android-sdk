@@ -141,6 +141,34 @@
 
 ## [2.3. Load Native Ads]()
 
+### 2.3.0 AD Object class
+
+* ADNativeViewObject, ADNativeInterstitialObject, ADNativeOfferWallObject kế thừa từ class ADNativeObject
+
+* ADNativeObject
+
+	getID
+	getRating - float
+
+* ADNativeViewObject
+
+	getImageUrl
+
+* ADNativeInterstitialObject
+
+	getImageUrl
+	getIconUrl
+	getDescription
+	getName
+
+* ADNativeOfferWallObject
+
+	getPoint
+	getIconUrl
+	getName
+	getAction
+	getDescription
+
 ### 2.3.1 Config:
 
 **AppotaAdsSDK.init(Context)** : Call this before calling load ads. Should pass Application Context for initialization & only call one time.
@@ -166,12 +194,12 @@ a. Make a request for load native ads:
 
 b. Set callback for request.
 
-- ADRequestCallback(com.appota.ads.ADNative.ADRequestCallback)
+- ADNativeRequestCallback(com.appota.ads.ADNative.ADNativeRequestCallback)
 
-adNativeRequest.setRequestCallback(new ADRequestCallback() {
+adNativeRequest.setRequestCallback(new ADNativeRequestCallback() {
 			
 			@Override
-			public void onLoadAdsComplete(ArrayList<ADObject> listAds) {
+			public void onLoadAdsComplete(ArrayList<ADNativeObject> listAds) {
 				Log.i("onLoadAdsNativeComplete", "listAds size :"+listAds.size());
 			}
 			
@@ -192,4 +220,4 @@ c. Start loading native ads.
 
 Once user clicks on ads, call this function for processing click ads:
 
-`ADNative.click(adObject);`
+`ADNative.click(adNativeObject);`
