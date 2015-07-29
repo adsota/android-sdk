@@ -6,7 +6,9 @@
 
 [2.1. Configure SDK](#21-configure-sdk)
 
-[2.2. Load ads](#22-load-ad)
+[2.2. Load Ads](#22-load-ads)
+
+[2.3. Load Native Ads](#23-load-native-ads)
 
 ## [1. Import Appota Ads SDK]()
 
@@ -74,11 +76,11 @@
 ### [2.1.b Configure in code]()
 
 	
-`AppotaAdsSDK.init(Context)` Call this before calling load ads.
+`AppotaAdsSDK.init(Context)` Call this before calling load ads. Should pass Application Context for initialization & only call one time.
 
 `AppotaAdsSDK.active(Context)` : Override onResume of Activity & call this function. 
 
-## [2.2. Load Ad]()
+## [2.2. Load Ads]()
 
 ### [2.2.a Banner Ad]()
 
@@ -136,3 +138,58 @@
 	//status = true -> in publish mode, else development mode for testing.
 
 	You may add callback for loading ads like banner.
+
+## [2.3. Load Native Ads]()
+
+### 2.3.1 Config:
+
+**AppotaAdsSDK.init(Context)** : Call this before calling load ads. Should pass Application Context for initialization & only call one time.
+
+
+**AppotaAdsSDK.active(Context)** : Override onResume of Activity & call this function.
+
+In the process of development, you may want to get ads for testing,viewing, enable development mode, default is publish mode.
+
+`ADNative.enableDevelopemetMode(true);`
+
+### 2.3.2 Load native ads:
+
+a. Make a request for load native ads:
+
+`ADNativeRequest adNativeRequest =  new ADNativeRequest();`
+
+`adNativeRequest.adType = ADType.ADTypeBanner;`
+
+`adNativeRequest.adUnitID = 10;`
+
+- ADType(com.appota.ads.ADNative.ADType) is an enum type. It includes: ADTypeBanner, ADTypeInterstitial & ADTypeOfferWall.
+
+b. Set callback for request.
+
+- ADRequestCallback(com.appota.ads.ADNative.ADRequestCallback)
+
+adNativeRequest.setRequestCallback(new ADRequestCallback() {
+			
+			@Override
+			public void onLoadAdsComplete(ArrayList<ADObject> listAds) {
+				Log.i("onLoadAdsNativeComplete", "listAds size :"+listAds.size());
+			}
+			
+			@Override
+			public void onLoadAdsFailed(String message) {
+				Log.i("onLoadAdsNativeFailed", message);
+			}
+			
+			
+		});
+
+
+c. Start loading native ads.
+
+`ADNative.loadRequest(adNativeRequest);`
+
+### 2.3.3 Process click native ads:
+
+Once user clicks on ads, call this function for processing click ads:
+
+`ADNative.click(adObject);`
