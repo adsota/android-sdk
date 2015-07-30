@@ -65,10 +65,6 @@
             android:name="com.appota.apiKey"
             android:value="K-A176163-U00000-GUKUY7-FC7E0F1A9FFA763D" />
         
-        <!-- clientId for Ads -->
-        <meta-data
-            android:name="com.appota.clientId"
-            android:value="fce6205de1f14273e230a10a78d9d8e2054fe985e" />
 
         <activity
             android:name="com.appota.ads.view.AdActivity"
