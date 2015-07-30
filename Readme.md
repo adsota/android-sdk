@@ -139,6 +139,8 @@
 
 	You may add callback for loading ads like banner.
 
+[Read more about Offerwall](https://github.com/adsota/android-sdk/blob/master/Offerwall.md)
+
 ## [2.3. Load Native Ads]()
 
 ### 2.3.0 AD Object class
@@ -201,6 +203,8 @@ a. Make a request for load native ads:
 `adNativeRequest.state = "MyCustomState";` //Optional, use for Offerwall type
 
 `adNativeRequest.target = "MyCustomTarget";`//Optional, use for Offerwall type
+
+[Read more about Offerwall](https://github.com/adsota/android-sdk/blob/master/Offerwall.md)
 
 - ADType(com.appota.ads.ADNative.ADType) is an enum type. It includes: ADTypeBanner, ADTypeInterstitial & ADTypeOfferWall.
 

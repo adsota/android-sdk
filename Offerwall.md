@@ -25,4 +25,6 @@ Params:
 
 * hash: md5({point}{currency}{transaction_id}{rate}{app_id}{campaign_id}{target}{state}{secret_key})
 
+	Don't forget to keep `{` and `}` , just replace values for point,currency,..
+
 * secret_key: OfferWall secret key, It's allocated when you create the AdUnit.
