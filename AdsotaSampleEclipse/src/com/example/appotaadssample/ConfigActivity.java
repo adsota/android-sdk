@@ -81,6 +81,8 @@ public class ConfigActivity extends Activity implements OnClickListener{
 		ADNativeRequest adNativeRequest =  new ADNativeRequest();
 		adNativeRequest.adType = ADType.ADTypeBanner;
 		adNativeRequest.adUnitID = 46;
+//		adNativeRequest.state = "MyCustomState";//Optional, use for OfferWall type
+//		adNativeRequest.target = "MyCustomTarget";//Optional, use for OfferWall type
 		adNativeRequest.setRequestCallback(new ADNativeRequestCallback() {
 			
 			@Override

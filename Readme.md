@@ -198,6 +198,10 @@ a. Make a request for load native ads:
 
 `adNativeRequest.adUnitID = 10;`
 
+`adNativeRequest.state = "MyCustomState";` //Optional, use for Offerwall type
+
+`adNativeRequest.target = "MyCustomTarget";`//Optional, use for Offerwall type
+
 - ADType(com.appota.ads.ADNative.ADType) is an enum type. It includes: ADTypeBanner, ADTypeInterstitial & ADTypeOfferWall.
 
 b. Set callback for request.
